@@ -1,0 +1,17 @@
+---
+apiVersion: skaffold/v2beta26
+kind: Config
+build:
+  artifacts:
+    - image: xboxlive
+      context: ./..
+      ko:
+        dependencies:
+          paths:
+            - "*.go"
+          ignore:
+            - "*_test.go"
+deploy:
+  kubectl:
+    manifests:
+      - "kube/*"
