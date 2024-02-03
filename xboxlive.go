@@ -70,27 +70,7 @@ func (xblth *XBLTitleHistory) Names() (out []string) {
 	return out
 }
 
-type XBLPlayerAchievements struct {
-	Xuid   string `json:"xuid"`
-	Titles []struct {
-		TitleID     string `json:"titleId"`
-		Name        string `json:"name"`
-		Type        string `json:"type"`
-		Achievement struct {
-			CurrentAchievements int `json:"currentAchievements"`
-			TotalAchievements   int `json:"totalAchievements"`
-			CurrentGamerscore   int `json:"currentGamerscore"`
-			TotalGamerscore     int `json:"totalGamerscore"`
-			ProgressPercentage  int `json:"progressPercentage"`
-			SourceVersion       int `json:"sourceVersion"`
-		} `json:"achievement"`
-		TitleHistory struct {
-			LastTimePlayed time.Time `json:"lastTimePlayed"`
-		} `json:"titleHistory"`
-	} `json:"titles"`
-}
-
-func (xblpa *XBLPlayerAchievements) NewestTitleID() (string, error) {
+func (xblpa *XBLTitleHistory) FirstTitleID() (string, error) {
 	if len(xblpa.Titles) == 0 {
 		return "", userNoAchievementsErr
 	}
@@ -193,7 +173,7 @@ func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
 }
 
 func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, error) {
-	lastAchievementResult := &XBLPlayerAchievements{}
+	lastAchievementResult := &XBLTitleHistory{}
 
 	url := fmt.Sprintf("https://xbl.io/api/v2/achievements/player/%s", xuid)
 	_, err := client.R().
@@ -204,7 +184,7 @@ func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, erro
 		return "", err
 	}
 
-	lastAchievementID, err := lastAchievementResult.NewestTitleID()
+	lastAchievementID, err := lastAchievementResult.FirstTitleID()
 	if err != nil {
 		return "", err
 	}
