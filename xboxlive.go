@@ -15,7 +15,7 @@ const (
 
 var (
 	userNotFoundErr        = errors.New("user not found")
-	userNoTitlesErr        = errors.New("user has no achievements")
+	userNoTitlesErr        = errors.New("user hasn't played any games")
 	titleNoAchievementsErr = errors.New("title has no achievements")
 )
 
@@ -78,12 +78,43 @@ func (xblth *XBLTitleHistory) RecentNames() (out []string) {
 	return out
 }
 
-func (xblpa *XBLTitleHistory) FirstTitleID() (string, error) {
-	if len(xblpa.Titles) == 0 {
+func (xblth *XBLTitleHistory) FirstTitleID() (string, error) {
+	if len(xblth.Titles) == 0 {
 		return "", userNoTitlesErr
 	}
 
-	return xblpa.Titles[0].TitleID, nil
+	return xblth.Titles[0].TitleID, nil
+}
+
+func (xblth *XBLTitleHistory) FirstTitleSummary() (string, error) {
+	if len(xblth.Titles) == 0 {
+		return "", userNoTitlesErr
+	}
+
+	t := xblth.Titles[0]
+
+	var sb strings.Builder
+
+	w := func(in, colour string) {
+		s := colourString(in, colour)
+		sb.WriteString(s)
+	}
+
+	w(t.Name, "cyan")
+
+	sb.WriteString(" | ")
+
+	w(fmt.Sprintf("Score: %d/%d", t.Achievement.CurrentGamerscore, t.Achievement.TotalGamerscore), "yellow")
+
+	sb.WriteString(" | ")
+
+	w(fmt.Sprintf("Achievements: %d", t.Achievement.CurrentAchievements), "green")
+
+	sb.WriteString(" | ")
+
+	w(fmt.Sprintf("%d%%", t.Achievement.ProgressPercentage), "magenta")
+
+	return sb.String(), nil
 }
 
 type XBLPlayerTitleAchievements struct {
@@ -213,7 +244,7 @@ func xblGetXuid(client *req.Client, user string) (string, string, error) {
 	return result.People[0].Xuid, result.People[0].Gamertag, nil
 }
 
-func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
+func xblRecentGames(client *req.Client, gamerTag, xuid string) (string, error) {
 	result := XBLTitleHistory{}
 
 	_, err := client.R().
@@ -300,4 +331,29 @@ func xblPlayerSummary(client *req.Client, gamerTag, xuid string) (string, error)
 	}
 
 	return fmt.Sprintf("Xbox live player summary: %s", playerSummary.Summary()), nil
+}
+
+func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
+	result := &XBLTitleHistory{}
+
+	_, err := client.R().
+		SetPathParam("xuid", xuid).
+		SetSuccessResult(&result).
+		Get("https://xbl.io/api/v2/player/titleHistory/{xuid}")
+
+	if err != nil {
+		return "", err
+	}
+
+	summary, err := result.FirstTitleSummary()
+
+	if errors.Is(err, userNoTitlesErr) {
+		return fmt.Sprintf("%s hasn't played any games", gamerTag), nil
+	}
+
+	if err != nil {
+		return "", err
+	}
+
+	return fmt.Sprintf("%s's last played game: %s", gamerTag, summary), nil
 }

@@ -138,6 +138,38 @@ func TestXBLTitleHistoryFirstTitleID(t *testing.T) {
 	}
 }
 
+func TestXBLTitleHistoryFirstTitleSummary(t *testing.T) {
+	cases := map[string]struct {
+		xblthfn  string
+		expected string
+		err      error
+	}{
+		"no titles": {
+			xblthfn:  "no_titles.json",
+			expected: "",
+			err:      userNoTitlesErr,
+		},
+		"one title": {
+			xblthfn:  "recent_titles.json",
+			expected: "{cyan}Persona 3 Reload{clear} | {yellow}Score: 275/1000{clear} | {green}Achievements: 20{clear} | {magenta}28%{clear}",
+			err:      nil,
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			xblthjson := openTestFile(t, "XBLTitleHistory", tc.xblthfn)
+			xblth := XBLTitleHistory{}
+			err := json.Unmarshal(xblthjson, &xblth)
+			assert.Nil(t, err)
+
+			out, err := xblth.FirstTitleSummary()
+			assert.Equal(t, tc.expected, out)
+			assert.ErrorIs(t, tc.err, err)
+		})
+	}
+}
+
 func TestXBLPlayerTitleAchievementsNewestAchievement(t *testing.T) {
 	cases := map[string]struct {
 		xblptafn string
@@ -239,7 +271,7 @@ func TestXblGetXuid(t *testing.T) {
 	}
 }
 
-func TestXblLastGame(t *testing.T) {
+func TestXblRecentGames(t *testing.T) {
 	cases := map[string]struct {
 		xblxs string
 		msg   string
@@ -273,7 +305,7 @@ func TestXblLastGame(t *testing.T) {
 				return resp, nil
 			})
 
-			out, err := xblLastGame(client, "test", "test")
+			out, err := xblRecentGames(client, "test", "test")
 			assert.Equal(t, tc.msg, out)
 			assert.ErrorIs(t, tc.err, err)
 		})
@@ -364,6 +396,42 @@ func TestXblPlayerSummary(t *testing.T) {
 			})
 
 			out, err := xblPlayerSummary(client, "test", "test")
+			assert.Equal(t, tc.expected, out)
+			assert.ErrorIs(t, tc.err, err)
+		})
+	}
+}
+
+func TestXblLastGame(t *testing.T) {
+	cases := map[string]struct {
+		xblthfn  string
+		expected string
+		err      error
+	}{
+		"has played": {
+			xblthfn:  "recent_titles.json",
+			expected: "test's last played game: {cyan}Persona 3 Reload{clear} | {yellow}Score: 275/1000{clear} | {green}Achievements: 20{clear} | {magenta}28%{clear}",
+			err:      nil,
+		},
+		"hasn't played": {
+			xblthfn:  "no_titles.json",
+			expected: "test hasn't played any games",
+			err:      nil,
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			xblpsjson := openTestFile(t, "XBLTitleHistory", tc.xblthfn)
+
+			client := req.C()
+			httpmock.ActivateNonDefault(client.GetClient())
+			httpmock.RegisterResponder("GET", "https://xbl.io/api/v2/player/titleHistory/test", func(request *http.Request) (*http.Response, error) {
+				resp := httpmock.NewBytesResponse(http.StatusOK, xblpsjson)
+				return resp, nil
+			})
+
+			out, err := xblLastGame(client, "test", "test")
 			assert.Equal(t, tc.expected, out)
 			assert.ErrorIs(t, tc.err, err)
 		})

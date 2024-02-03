@@ -132,6 +132,8 @@ func genXblHandler(client *req.Client, kv *bolt.DB) func(m gowon.Message) (strin
 		case "s", "set":
 			return setUserHandler(client, kv, m.Nick, user)
 		case "r", "recent":
+			return CommandHandler(client, kv, m.Nick, user, xblRecentGames)
+		case "l", "last":
 			return CommandHandler(client, kv, m.Nick, user, xblLastGame)
 		case "a", "achievement":
 			return CommandHandler(client, kv, m.Nick, user, xblLastAchievement)
@@ -139,7 +141,7 @@ func genXblHandler(client *req.Client, kv *bolt.DB) func(m gowon.Message) (strin
 			return CommandHandler(client, kv, m.Nick, user, xblPlayerSummary)
 		}
 
-		return "one of [s]et, [r]ecent, [a]chievements or [p]layer  must be passed as a command", nil
+		return "one of [s]et, [r]ecent, [l]ast, [a]chievements or [p]layer  must be passed as a command", nil
 	}
 }
 
