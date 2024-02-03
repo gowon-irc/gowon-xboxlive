@@ -183,18 +183,6 @@ func main() {
 	}
 	defer kv.Close()
 
-	// err = kv.Update(func(tx *bolt.Tx) error {
-	// 	_, err := tx.CreateBucketIfNotExists([]byte("xboxlive_xuid"))
-	// 	return err
-	// })
-	// err = kv.Update(func(tx *bolt.Tx) error {
-	// 	_, err := tx.CreateBucketIfNotExists([]byte("xboxlive_gamertag"))
-	// 	return err
-	// })
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
 	for _, bucket := range []string{"xboxlive_xuid", "xboxlive_gamertag"} {
 		err = kv.Update(func(tx *bolt.Tx) error {
 			_, err := tx.CreateBucketIfNotExists([]byte(bucket))
