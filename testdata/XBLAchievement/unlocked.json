@@ -1,0 +1,50 @@
+{
+    "id": "24",
+    "serviceConfigId": "00000000-0000-0000-0000-0000638eec7e",
+    "name": "Extracurricular Excellence",
+    "titleAssociations": [
+        {
+            "name": "Persona 3 Reload",
+            "id": 1670311038
+        }
+    ],
+    "progressState": "Achieved",
+    "progression": {
+        "requirements": [],
+        "timeUnlocked": "2024-02-03T15:22:42.9070000Z"
+    },
+    "mediaAssets": [
+        {
+            "name": "7dba48ca-a3c9-4853-9ed3-5b286890b04d",
+            "type": "Icon",
+            "url": "https://images-eds-ssl.xboxlive.com/image?url=27S1DHqE.cHkmFg4nspsd4AWHwULTOdEQKuqd_O3I2mlCeZVQuY0.nxM_QmKL1JQL2rJG_sfhRRyjsLywZlKTSvloSZYuxM1BqthUV3UmRGZm0g5ZKPeAaEyi_cJ2UEn"
+        }
+    ],
+    "platforms": [
+        "XboxOne"
+    ],
+    "isSecret": false,
+    "description": "Rescued a missing person.",
+    "lockedDescription": "Rescued a missing person.",
+    "productId": "00000000-0000-0000-0000-0000638eec7e",
+    "achievementType": "Persistent",
+    "participationType": "Individual",
+    "timeWindow": null,
+    "rewards": [
+        {
+            "name": null,
+            "description": null,
+            "value": "10",
+            "type": "Gamerscore",
+            "mediaAsset": null,
+            "valueType": "Int"
+        }
+    ],
+    "estimatedTime": "00:00:00",
+    "deeplink": "",
+    "isRevoked": false,
+    "rarity": {
+        "currentCategory": "Rare",
+        "currentPercentage": 1.82
+    }
+}

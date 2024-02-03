@@ -10,12 +10,12 @@ import (
 )
 
 const (
-	historyDifferenceNanoSeconds = 2628000000000000
+	historyDifference = time.Hour * 24 * 30
 )
 
 var (
 	userNotFoundErr        = errors.New("user not found")
-	userNoAchievementsErr  = errors.New("user has no achievements")
+	userNoTitlesErr        = errors.New("user has no achievements")
 	titleNoAchievementsErr = errors.New("title has no achievements")
 )
 
@@ -42,27 +42,31 @@ type XBLXuidSearch struct {
 }
 
 type XBLTitleHistory struct {
-	Xuid   string `json:"xuid"`
-	Titles []struct {
-		TitleID     string `json:"titleId"`
-		Name        string `json:"name"`
-		Type        string `json:"type"`
-		Achievement struct {
-			CurrentAchievements int `json:"currentAchievements"`
-			TotalAchievements   int `json:"totalAchievements"`
-			CurrentGamerscore   int `json:"currentGamerscore"`
-			TotalGamerscore     int `json:"totalGamerscore"`
-			ProgressPercentage  int `json:"progressPercentage"`
-		} `json:"achievement"`
-		TitleHistory struct {
-			LastTimePlayed time.Time `json:"lastTimePlayed"`
-		} `json:"titleHistory"`
-	} `json:"titles"`
+	Xuid   string     `json:"xuid"`
+	Titles []XBLTitle `json:"titles"`
 }
 
-func (xblth *XBLTitleHistory) Names() (out []string) {
+type XBLTitle struct {
+	TitleID     string `json:"titleId"`
+	Name        string `json:"name"`
+	Type        string `json:"type"`
+	Achievement struct {
+		CurrentAchievements int `json:"currentAchievements"`
+		TotalAchievements   int `json:"totalAchievements"`
+		CurrentGamerscore   int `json:"currentGamerscore"`
+		TotalGamerscore     int `json:"totalGamerscore"`
+		ProgressPercentage  int `json:"progressPercentage"`
+	} `json:"achievement"`
+	TitleHistory struct {
+		LastTimePlayed time.Time `json:"lastTimePlayed"`
+	} `json:"titleHistory"`
+}
+
+func (xblth *XBLTitleHistory) RecentNames() (out []string) {
+	out = []string{}
+
 	for _, t := range xblth.Titles {
-		if time.Since(t.TitleHistory.LastTimePlayed) < historyDifferenceNanoSeconds {
+		if time.Since(t.TitleHistory.LastTimePlayed) < historyDifference {
 			out = append(out, t.Name)
 		}
 	}
@@ -72,7 +76,7 @@ func (xblth *XBLTitleHistory) Names() (out []string) {
 
 func (xblpa *XBLTitleHistory) FirstTitleID() (string, error) {
 	if len(xblpa.Titles) == 0 {
-		return "", userNoAchievementsErr
+		return "", userNoTitlesErr
 	}
 
 	return xblpa.Titles[0].TitleID, nil
@@ -163,11 +167,13 @@ func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
 		return "", err
 	}
 
-	if len(result.Titles) == 0 {
-		return "user has no recently played xboxlive games", nil
+	recent := result.RecentNames()
+
+	if len(recent) == 0 {
+		return fmt.Sprintf("%s has no recently played xboxlive games", gamerTag), nil
 	}
 
-	cl := colourList(result.Names())
+	cl := colourList(recent)
 
 	return fmt.Sprintf("%s's recently played xbox live games: %s", gamerTag, strings.Join(cl, ", ")), nil
 }
@@ -185,6 +191,11 @@ func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, erro
 	}
 
 	lastAchievementID, err := lastAchievementResult.FirstTitleID()
+
+	if lastAchievementID == "" {
+		return fmt.Sprintf("%s has not played any games", gamerTag), nil
+	}
+
 	if err != nil {
 		return "", err
 	}
@@ -202,6 +213,11 @@ func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, erro
 	}
 
 	lastAchievement, err := playerTitleAchievementsResult.NewestAchievement()
+
+	if errors.Is(err, titleNoAchievementsErr) {
+		return fmt.Sprintf("%s has no achievements", gamerTag), err
+	}
+
 	if err != nil {
 		return "", err
 	}

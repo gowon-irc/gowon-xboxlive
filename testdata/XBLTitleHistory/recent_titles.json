@@ -1,0 +1,526 @@
+{
+  "xuid": "2533274812012273",
+  "titles": [
+    {
+      "titleId": "1670311038",
+      "pfn": "SEGAofAmericaInc.L0cb6b3aea_s751p9cej88mt",
+      "bingId": null,
+      "serviceConfigId": "00000000-0000-0000-0000-0000638eec7e",
+      "windowsPhoneProductId": null,
+      "name": "Persona 3 Reload",
+      "type": "Game",
+      "devices": [
+        "PC",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.59768.13660021874166335.cf99aaa0-1039-41d3-bafe-7239ec9e261c.219dd9bc-69b7-4f09-b013-d5e3092cf821",
+      "mediaItemType": "Application",
+      "modernTitleId": "1670311038",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 20,
+        "totalAchievements": 0,
+        "currentGamerscore": 275,
+        "totalGamerscore": 1000,
+        "progressPercentage": 28,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 1
+      },
+      "gamePass": {
+        "isGamePass": true
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2024-02-03T14:01:17.9191575Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full",
+      "isStreamable": true
+    },
+    {
+      "titleId": "2071061510",
+      "pfn": "Neowiz.3616725F496B_r4z3116tdh636",
+      "bingId": null,
+      "serviceConfigId": "00000000-0000-0000-0000-00007b71e406",
+      "windowsPhoneProductId": null,
+      "name": "Lies of P",
+      "type": "Game",
+      "devices": [
+        "PC",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.58819.14167207133116460.47e9afed-5648-49f3-aa78-034a762fbc26.613fed17-69cd-4ca8-bec7-7b0bd2218d78",
+      "mediaItemType": "Application",
+      "modernTitleId": "2071061510",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 26,
+        "totalAchievements": 0,
+        "currentGamerscore": 505,
+        "totalGamerscore": 1000,
+        "progressPercentage": 50,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 1
+      },
+      "gamePass": {
+        "isGamePass": true
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2023-10-27T00:33:01.7921987Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full",
+      "isStreamable": true
+    },
+    {
+      "titleId": "1690524168",
+      "pfn": "946B6A6E.WoLongFallenDynasty_dkffhzhmh6pmy",
+      "bingId": null,
+      "serviceConfigId": "00000000-0000-0000-0000-000064c35a08",
+      "windowsPhoneProductId": null,
+      "name": "Wo Long: Fallen Dynasty",
+      "type": "Game",
+      "devices": [
+        "PC",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.46001.13524128328401524.c8089ad9-5e75-4246-83e8-2dac88f04afd.9a8d6174-1791-45bf-b366-9360daf09b20",
+      "mediaItemType": "Application",
+      "modernTitleId": "1690524168",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 39,
+        "totalAchievements": 0,
+        "currentGamerscore": 650,
+        "totalGamerscore": 1585,
+        "progressPercentage": 41,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 1
+      },
+      "gamePass": {
+        "isGamePass": true
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2023-03-11T12:27:16.8917499Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full",
+      "isStreamable": true
+    },
+    {
+      "titleId": "2043073184",
+      "pfn": "Microsoft.254428597CFE2_8wekyb3d8bbwe",
+      "bingId": null,
+      "serviceConfigId": "00000000-0000-0000-0000-000079c6d2a0",
+      "windowsPhoneProductId": null,
+      "name": "Halo Infinite",
+      "type": "Game",
+      "devices": [
+        "PC",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.48123.14330850369313893.ecf17f37-f6d5-45ad-a672-ba577afb2974.ca685677-0e91-49b0-923b-b2903c01e32b",
+      "mediaItemType": "Application",
+      "modernTitleId": "2043073184",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 38,
+        "totalAchievements": 0,
+        "currentGamerscore": 450,
+        "totalGamerscore": 2020,
+        "progressPercentage": 22,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 3
+      },
+      "gamePass": {
+        "isGamePass": true
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2022-09-17T14:43:30.7173612Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full",
+      "isStreamable": true
+    },
+    {
+      "titleId": "1651248133",
+      "pfn": "FuncomOsloAS.ProjectHammerhead_pkaskhy6cdq4g",
+      "bingId": null,
+      "serviceConfigId": "00000000-0000-0000-0000-0000626c0c05",
+      "windowsPhoneProductId": null,
+      "name": "Metal: Hellsinger (Xbox Series X|S & PC)",
+      "type": "Game",
+      "devices": [
+        "PC",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.18566.14211614393053975.d00d28a5-d4fc-4c8e-a8f0-3148bc99b8b0.dcd12381-ea47-4b8b-8e4d-449508ae8021",
+      "mediaItemType": "Application",
+      "modernTitleId": "1651248133",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 13,
+        "totalAchievements": 0,
+        "currentGamerscore": 470,
+        "totalGamerscore": 1000,
+        "progressPercentage": 47,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 3
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2022-09-17T13:50:40.8133073Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1144039928",
+      "pfn": "Microsoft.Chelan_8wekyb3d8bbwe",
+      "bingId": "f33009f4-14ff-4821-94e3-c3573c868c2e",
+      "serviceConfigId": "77290100-225e-4768-9373-98164430a9f8",
+      "windowsPhoneProductId": null,
+      "name": "Halo: The Master Chief Collection",
+      "type": "Game",
+      "devices": [
+        "PC"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.25919.14011015795942652.ca67db1b-d21e-47e9-bbb4-5ece2ce3f774.c71a2431-5ef1-4c32-92fa-22cca6162053",
+      "mediaItemType": "Application",
+      "modernTitleId": "1144039928",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 3,
+        "totalAchievements": 0,
+        "currentGamerscore": 20,
+        "totalGamerscore": 7000,
+        "progressPercentage": 0,
+        "sourceVersion": 2
+      },
+      "stats": {
+        "sourceVersion": 2
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2021-06-25T21:47:24.47181Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full",
+      "isStreamable": true
+    },
+    {
+      "titleId": "1313673121",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d8044e4d0fa1",
+      "windowsPhoneProductId": null,
+      "name": "Dark Souls: Prepare to Die Edition",
+      "type": "Game",
+      "devices": [
+        "Xbox360"
+      ],
+      "displayImage": "http://images-eds.xboxlive.com/image?url=sRVbQFQ1v0yjaf073.4Rll0l47KR5AZVdRUNfGvlnBcWlJSui.kjTPNFKnFFPHIR2NoLFp7nW3QX7pRxkCCsJY9GcJnaq5jbyy18sF4A9uM7LDmBwadiyeYOrv5LZVBcXvay9Xj7Gb6D6mN4beRyWg--",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": null,
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 23,
+        "totalAchievements": 41,
+        "currentGamerscore": 615,
+        "totalGamerscore": 1000,
+        "progressPercentage": 62,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2014-05-08T18:41:51Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1096157210",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d8024156081a",
+      "windowsPhoneProductId": null,
+      "name": "Guitar Hero World Tour",
+      "type": "Game",
+      "devices": [
+        "Xbox360"
+      ],
+      "displayImage": "http://images-eds.xboxlive.com/image?url=S35PkG.Po6AuYMOCXUZRrEOttKZnyhla8BAvz_.mFVKA4u8jVObzUIIr.IPhFRiAXDCYYehBCXOsKscjqVzwuDbZrrwg3LyyefNjcHpMfqI7bN4uBq5txD5TwpoW0iG2oLky3C_nWjsiKJEFgyla1w--",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": null,
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 0,
+        "totalAchievements": 50,
+        "currentGamerscore": 0,
+        "totalGamerscore": 1000,
+        "progressPercentage": 0,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2009-01-01T15:48:26Z",
+        "visible": true,
+        "canHide": true
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1096157175",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d802415607f7",
+      "windowsPhoneProductId": null,
+      "name": "Guitar Hero III",
+      "type": "Game",
+      "devices": [
+        "Xbox360"
+      ],
+      "displayImage": "http://images-eds.xboxlive.com/image?url=S35PkG.Po6AuYMOCXUZRrEOttKZnyhla8BAvz_.mFVKA4u8jVObzUIIr.IPhFRiAXDCYYehBCXOsKscjqVzwuNVfgjfI64oVS7bYc5CFzr88AHAJ6jR62.N4v1gdEmsaipnDQUsH.9kAZw.eMObSSg--",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": null,
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 17,
+        "totalAchievements": 59,
+        "currentGamerscore": 120,
+        "totalGamerscore": 1000,
+        "progressPercentage": 12,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2008-07-28T09:29:33Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1414793202",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d802545407f2",
+      "serviceConfigId": "6f710100-41ce-4843-aa7c-9d461699bc7f",
+      "windowsPhoneProductId": null,
+      "name": "GTA IV",
+      "type": "Game",
+      "devices": [
+        "Xbox360",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.18344.69304479265522151.5b8601c1-35b0-4bad-bcff-f51fb0ce43d8.addad03c-8295-4bb1-a2eb-47bee7b2b6d6",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": "379174015",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 8,
+        "totalAchievements": 65,
+        "currentGamerscore": 70,
+        "totalGamerscore": 1500,
+        "progressPercentage": 5,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2008-05-26T14:14:14Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1297287125",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d8024d5307d5",
+      "serviceConfigId": "f6970100-6401-46ed-ba59-f6da00832ee9",
+      "windowsPhoneProductId": null,
+      "name": "Gears of War",
+      "type": "Game",
+      "devices": [
+        "Xbox360",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.37229.68631123789499032.6299bbb9-6778-40d5-965f-080b552baa15.be2992c1-0236-4fd3-983a-9a9d9df0877e",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": "8597225",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 1,
+        "totalAchievements": 57,
+        "currentGamerscore": 10,
+        "totalGamerscore": 1250,
+        "progressPercentage": 1,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": true
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2008-03-28T21:04:07Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    },
+    {
+      "titleId": "1297287142",
+      "pfn": null,
+      "bingId": "66acd000-77fe-1000-9115-d8024d5307e6",
+      "serviceConfigId": "a8090100-8394-4014-9450-874b3705c68c",
+      "windowsPhoneProductId": null,
+      "name": "Halo 3",
+      "type": "Game",
+      "devices": [
+        "Xbox360",
+        "XboxOne",
+        "XboxSeries"
+      ],
+      "displayImage": "http://store-images.s-microsoft.com/image/apps.23404.66523654440684222.0db9936f-9bfa-468e-903d-d71dec9a72b7.79b21a0d-7cad-40b7-8a9b-7682ab49d26e",
+      "mediaItemType": "Xbox360Game",
+      "modernTitleId": "923125388",
+      "isBundle": false,
+      "achievement": {
+        "currentAchievements": 2,
+        "totalAchievements": 79,
+        "currentGamerscore": 25,
+        "totalGamerscore": 1750,
+        "progressPercentage": 1,
+        "sourceVersion": 1
+      },
+      "stats": {
+        "sourceVersion": 0
+      },
+      "gamePass": {
+        "isGamePass": false
+      },
+      "images": null,
+      "titleHistory": {
+        "lastTimePlayed": "2008-02-04T15:18:08Z",
+        "visible": true,
+        "canHide": false
+      },
+      "titleRecord": null,
+      "detail": null,
+      "friendsWhoPlayed": null,
+      "alternateTitleIds": null,
+      "contentBoards": null,
+      "xboxLiveTier": "Full"
+    }
+  ]
+}
