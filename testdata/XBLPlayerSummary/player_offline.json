@@ -1,0 +1,53 @@
+{
+  "people": [
+    {
+      "xuid": "2533274812012272",
+      "isFavorite": false,
+      "isFollowingCaller": false,
+      "isFollowedByCaller": false,
+      "isIdentityShared": false,
+      "addedDateTimeUtc": null,
+      "displayName": "graffsu7",
+      "realName": "",
+      "displayPicRaw": "https://images-eds-ssl.xboxlive.com/image?url=7OTVnZUMVj4OV2zUUGecWvn3U00nQQLfK7_kwpANoghkESSuB5YeQXgqtezYA4MTisxXUBEESblZoV49TjO_6WCSNcHWL2cgLOjGIfNVijg-&background=0xababab&mode=Padding&format=png",
+      "useAvatar": false,
+      "gamertag": "graffsu7",
+      "gamerScore": "2466",
+      "xboxOneRep": "GoodPlayer",
+      "presenceState": "Offline",
+      "presenceText": "Offline",
+      "presenceDevices": null,
+      "isBroadcasting": false,
+      "isCloaked": null,
+      "isQuarantined": false,
+      "suggestion": null,
+      "recommendation": null,
+      "titleHistory": null,
+      "multiplayerSummary": {
+        "InMultiplayerSession": 0,
+        "InParty": 0
+      },
+      "recentPlayer": null,
+      "follower": null,
+      "preferredColor": {
+        "primaryColor": "107c10",
+        "secondaryColor": "102b14",
+        "tertiaryColor": "155715"
+      },
+      "presenceDetails": null,
+      "titlePresence": null,
+      "titleSummaries": null,
+      "presenceTitleIds": null,
+      "detail": null,
+      "communityManagerTitles": null,
+      "socialManager": {
+        "titleIds": []
+      },
+      "broadcast": [],
+      "tournamentSummary": null,
+      "avatar": null
+    }
+  ],
+  "recommendationSummary": null,
+  "friendFinderState": null
+}

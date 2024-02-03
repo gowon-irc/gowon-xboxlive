@@ -19,6 +19,10 @@ var (
 	titleNoAchievementsErr = errors.New("title has no achievements")
 )
 
+func colourString(in, colour string) string {
+	return fmt.Sprintf("{%s}%s{clear}", colour, in)
+}
+
 func colourList(in []string) (out []string) {
 	out = []string{}
 
@@ -27,7 +31,7 @@ func colourList(in []string) (out []string) {
 
 	for n, i := range in {
 		c := colours[n%cl]
-		o := fmt.Sprintf("{%s}%s{clear}", c, i)
+		o := colourString(i, c)
 		out = append(out, o)
 	}
 
@@ -136,6 +140,60 @@ func (xblpta *XBLPlayerTitleAchievements) NewestAchievement() (newest XBLAchieve
 	return newest, nil
 }
 
+type XBLPlayerSummary struct {
+	People []XBLPlayer `json:"people"`
+}
+
+type XBLPlayer struct {
+	Xuid               string `json:"xuid"`
+	DisplayName        string `json:"displayName"`
+	Gamertag           string `json:"gamertag"`
+	GamerScore         string `json:"gamerScore"`
+	XboxOneRep         string `json:"xboxOneRep"`
+	PresenceState      string `json:"presenceState"`
+	PresenceText       string `json:"presenceText"`
+	IsBroadcasting     bool   `json:"isBroadcasting"`
+	MultiplayerSummary struct {
+		InMultiplayerSession int `json:"InMultiplayerSession"`
+		InParty              int `json:"InParty"`
+	} `json:"multiplayerSummary"`
+}
+
+func (xblp *XBLPlayerSummary) Summary() string {
+	var sb strings.Builder
+
+	w := func(in, colour string) {
+		s := colourString(in, colour)
+		sb.WriteString(s)
+	}
+
+	p := xblp.People[0]
+
+	w(p.Gamertag, "cyan")
+
+	sb.WriteString(" | ")
+
+	w(p.GamerScore, "yellow")
+
+	sb.WriteString(" | ")
+
+	stateColour := func(s string) string {
+		if s == "Online" {
+			return "green"
+		}
+		return "red"
+	}
+
+	w(p.PresenceState, stateColour(p.PresenceState))
+
+	if p.PresenceState == "Online" {
+		sb.WriteString(" | ")
+		sb.WriteString(p.PresenceText)
+	}
+
+	return sb.String()
+}
+
 func xblGetXuid(client *req.Client, user string) (string, string, error) {
 	result := &XBLXuidSearch{}
 
@@ -227,4 +285,19 @@ func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, erro
 	achievementDesc := strings.TrimSuffix(lastAchievement.Description, ".")
 
 	return fmt.Sprintf("%s's last xbox live achievement: %s - %s (%s)", gamerTag, gameName, achievementName, achievementDesc), nil
+}
+
+func xblPlayerSummary(client *req.Client, gamerTag, xuid string) (string, error) {
+	playerSummary := &XBLPlayerSummary{}
+
+	_, err := client.R().
+		SetPathParam("xuid", xuid).
+		SetSuccessResult(&playerSummary).
+		Get("https://xbl.io/api/v2/player/summary/{xuid}")
+
+	if err != nil {
+		return "", err
+	}
+
+	return playerSummary.Summary(), nil
 }

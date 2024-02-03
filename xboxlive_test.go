@@ -175,6 +175,30 @@ func TestXBLPlayerTitleAchievementsNewestAchievement(t *testing.T) {
 	}
 }
 
+func TestXBLPlayerSummary(t *testing.T) {
+	cases := map[string]struct {
+		xblpsfn  string
+		expected string
+	}{
+		"player online": {
+			xblpsfn:  "player_online.json",
+			expected: "{cyan}player{clear} | {yellow}3225{clear} | {green}Online{clear} | Persona 3 Reload",
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			xblpsjson := openTestFile(t, "XBLPlayerSummary", tc.xblpsfn)
+			xblps := XBLPlayerSummary{}
+			err := json.Unmarshal(xblpsjson, &xblps)
+			assert.Nil(t, err)
+
+			out := xblps.Summary()
+			assert.Equal(t, tc.expected, out)
+		})
+	}
+}
+
 func TestXblGetXuid(t *testing.T) {
 	cases := map[string]struct {
 		xblxs    string
@@ -305,6 +329,42 @@ func TestXblLastAchievement(t *testing.T) {
 
 			out, err := xblLastAchievement(client, "test", "test")
 			assert.Equal(t, tc.msg, out)
+			assert.ErrorIs(t, tc.err, err)
+		})
+	}
+}
+
+func TestXblPlayerSummary(t *testing.T) {
+	cases := map[string]struct {
+		xblpsfn  string
+		expected string
+		err      error
+	}{
+		"player online": {
+			xblpsfn:  "player_online.json",
+			expected: "{cyan}player{clear} | {yellow}3225{clear} | {green}Online{clear} | Persona 3 Reload",
+			err:      nil,
+		},
+		"player offline": {
+			xblpsfn:  "player_offline.json",
+			expected: "{cyan}graffsu7{clear} | {yellow}2466{clear} | {red}Offline{clear}",
+			err:      nil,
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			xblpsjson := openTestFile(t, "XBLPlayerSummary", tc.xblpsfn)
+
+			client := req.C()
+			httpmock.ActivateNonDefault(client.GetClient())
+			httpmock.RegisterResponder("GET", "https://xbl.io/api/v2/player/summary/test", func(request *http.Request) (*http.Response, error) {
+				resp := httpmock.NewBytesResponse(http.StatusOK, xblpsjson)
+				return resp, nil
+			})
+
+			out, err := xblPlayerSummary(client, "test", "test")
+			assert.Equal(t, tc.expected, out)
 			assert.ErrorIs(t, tc.err, err)
 		})
 	}

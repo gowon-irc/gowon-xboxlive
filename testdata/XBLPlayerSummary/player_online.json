@@ -1,0 +1,53 @@
+{
+    "people": [
+        {
+            "xuid": "2533274812012273",
+            "isFavorite": false,
+            "isFollowingCaller": false,
+            "isFollowedByCaller": false,
+            "isIdentityShared": false,
+            "addedDateTimeUtc": null,
+            "displayName": "player",
+            "realName": "",
+            "displayPicRaw": "https://images-eds-ssl.xboxlive.com/image?url=_ypRc.tDkw6ssGJei7uFnjPBFhPKOw9luaoEyDH5ID6jcTnFv7AXbf1vhs959xH7.a9cWLJXDtd1UjkK.Syc2qWRVqczFWENiJZitpDnZaY-&background=0xababab&mode=Padding&format=png",
+            "useAvatar": false,
+            "gamertag": "player",
+            "gamerScore": "3225",
+            "xboxOneRep": "GoodPlayer",
+            "presenceState": "Online",
+            "presenceText": "Persona 3 Reload",
+            "presenceDevices": null,
+            "isBroadcasting": false,
+            "isCloaked": null,
+            "isQuarantined": false,
+            "suggestion": null,
+            "recommendation": null,
+            "titleHistory": null,
+            "multiplayerSummary": {
+                "InMultiplayerSession": 0,
+                "InParty": 0
+            },
+            "recentPlayer": null,
+            "follower": null,
+            "preferredColor": {
+                "primaryColor": "107c10",
+                "secondaryColor": "102b14",
+                "tertiaryColor": "155715"
+            },
+            "presenceDetails": null,
+            "titlePresence": null,
+            "titleSummaries": null,
+            "presenceTitleIds": null,
+            "detail": null,
+            "communityManagerTitles": null,
+            "socialManager": {
+                "titleIds": []
+            },
+            "broadcast": [],
+            "tournamentSummary": null,
+            "avatar": null
+        }
+    ],
+    "recommendationSummary": null,
+    "friendFinderState": null
+}
