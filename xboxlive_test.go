@@ -342,12 +342,12 @@ func TestXblPlayerSummary(t *testing.T) {
 	}{
 		"player online": {
 			xblpsfn:  "player_online.json",
-			expected: "{cyan}player{clear} | {yellow}3225{clear} | {green}Online{clear} | Persona 3 Reload",
+			expected: "Xbox live player summary: {cyan}player{clear} | {yellow}3225{clear} | {green}Online{clear} | Persona 3 Reload",
 			err:      nil,
 		},
 		"player offline": {
 			xblpsfn:  "player_offline.json",
-			expected: "{cyan}graffsu7{clear} | {yellow}2466{clear} | {red}Offline{clear}",
+			expected: "Xbox live player summary: {cyan}graffsu7{clear} | {yellow}2466{clear} | {red}Offline{clear}",
 			err:      nil,
 		},
 	}

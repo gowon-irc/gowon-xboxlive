@@ -299,5 +299,5 @@ func xblPlayerSummary(client *req.Client, gamerTag, xuid string) (string, error)
 		return "", err
 	}
 
-	return playerSummary.Summary(), nil
+	return fmt.Sprintf("Xbox live player summary: %s", playerSummary.Summary()), nil
 }
