@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-BROKER_HOST="${BROKER_HOST:-localhost}"
+BROKER_HOST="${BROKER_HOST:-broker.emqx.io}"
 BROKER_PORT="${BROKER_PORT:-1883}"
 
 check_command() {
@@ -68,7 +68,7 @@ red() {
 # input message|expected output
 TEST_LINES="$(
 cat << EOF
-.xbl invalid command|one of [s]et, [r]ecent or [a]chievements must be passed as a command
+.xbl invalid command|one of [s]et, [r]ecent, [a]chievements or [p]layer must be passed as a command
 EOF
 )"
 
