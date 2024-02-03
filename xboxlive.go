@@ -135,10 +135,10 @@ func (xblpta *XBLPlayerTitleAchievements) NewestAchievement() (newest XBLAchieve
 func xblGetXuid(client *req.Client, user string) (string, string, error) {
 	result := &XBLXuidSearch{}
 
-	url := fmt.Sprintf("https://xbl.io/api/v2/search/%s", user)
 	_, err := client.R().
+		SetPathParam("user", user).
 		SetSuccessResult(&result).
-		Get(url)
+		Get("https://xbl.io/api/v2/search/{user}")
 
 	if err != nil {
 		return "", "", err
@@ -154,10 +154,10 @@ func xblGetXuid(client *req.Client, user string) (string, string, error) {
 func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
 	result := XBLTitleHistory{}
 
-	url := fmt.Sprintf("https://xbl.io/api/v2/player/titleHistory/%s", xuid)
 	_, err := client.R().
+		SetPathParam("xuid", xuid).
 		SetSuccessResult(&result).
-		Get(url)
+		Get("https://xbl.io/api/v2/player/titleHistory/{xuid}")
 
 	if err != nil {
 		return "", err
@@ -175,10 +175,10 @@ func xblLastGame(client *req.Client, gamerTag, xuid string) (string, error) {
 func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, error) {
 	lastAchievementResult := &XBLTitleHistory{}
 
-	url := fmt.Sprintf("https://xbl.io/api/v2/achievements/player/%s", xuid)
 	_, err := client.R().
+		SetPathParam("xuid", xuid).
 		SetSuccessResult(&lastAchievementResult).
-		Get(url)
+		Get("https://xbl.io/api/v2/achievements/player/{xuid}")
 
 	if err != nil {
 		return "", err
@@ -191,10 +191,11 @@ func xblLastAchievement(client *req.Client, gamerTag, xuid string) (string, erro
 
 	playerTitleAchievementsResult := &XBLPlayerTitleAchievements{}
 
-	url = fmt.Sprintf("https://xbl.io/api/v2/achievements/player/%s/%s", xuid, lastAchievementID)
 	_, err = client.R().
+		SetPathParam("xuid", xuid).
+		SetPathParam("id", lastAchievementID).
 		SetSuccessResult(&playerTitleAchievementsResult).
-		Get(url)
+		Get("https://xbl.io/api/v2/achievements/player/{xuid}/{id}")
 
 	if err != nil {
 		return "", err
