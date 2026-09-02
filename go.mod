@@ -8,7 +8,7 @@ require (
 	github.com/gowon-irc/go-gowon v0.0.0-20220719115350-ec869e1addf7
 	github.com/imroc/req/v3 v3.42.3
 	github.com/jarcoal/httpmock v1.3.1
-	github.com/jessevdk/go-flags v1.5.0
+	github.com/jessevdk/go-flags v1.6.1
 	github.com/stretchr/testify v1.9.0
 )
 
@@ -36,7 +36,7 @@ require (
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/sync v0.5.0 // indirect
-	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/sys v0.21.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.16.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
